@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-//import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -15,8 +14,8 @@ export class HomePage {
     private http: HttpClient
   ) {
     this.http.get('http://localhost:3000/product/all')
-      .subscribe(as => {
-      console.log(as);
+      .subscribe(response => {
+      console.log(response.content[0].content[0]);
     });
   }
 }
